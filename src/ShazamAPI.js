@@ -11,6 +11,8 @@ const ShazamAPI = {
             'x-rapidapi-key': '69aeee2797msh9107bea1f2f8b15p1254f4jsnc3603a5f76e7',
           },
         });
+
+        console.log(response);
   
         return response.data;
       } catch (error) {

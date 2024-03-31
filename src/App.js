@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import ShazamAPI from './ShazamAPI';
@@ -52,23 +51,19 @@ function App() {
 };
 
 
-
-
-
   return (
-    <div className="container-fluide">
+    <div className="container-fluide background--custom">
+
+      <h1 className='text'> Rechercher un song</h1>
 
      <form onSubmit={HandelSubmit}>
             <div className='d-flex flex-wrap justify-content-center  align-items-center' style={{marginTop:30,}} >
-     
-      
                   <div className=''> 
                   
                   <input type='text' placeholder='Titre de la musique' className='form-control' value={titre} onChange={HandleChange}/> </div>
                    
                   <div className='' style={{marginLeft:"10px"}}><button className='btn btn-primary'  type='submit'>Rechercher</button> </div>
         
-
             </div>
       </form>
 
@@ -107,10 +102,7 @@ function App() {
             <p>{result.track.subtitle}</p>
           </td>
           <td>
-          <audio controls>
-                <source src={result.track.url} type="audio/mpeg"/>
-              
-              </audio>
+             <a target='_blank' href={result.track.url} className='btn btn-primary'> Show detail</a>
           </td>
         </tr>
       );
@@ -118,16 +110,10 @@ function App() {
     return null; // Ignorez les résultats sans track défini
   })
 }
-                  {currentTrack && (
-                          <div>
-                            <h3>Lecture en cours :</h3>
-                            <p>{currentTrack.track.title}</p>
-                          </div>
-                        )}
                                       
                           
-                        </tbody>
-              </table>
+           </tbody>
+       </table>
       </div>
 
       </div>
